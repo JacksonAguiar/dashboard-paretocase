@@ -1,0 +1,181 @@
+# Formulário
+
+## 2. Stack Tecnológico Justificado
+
+### Liste e justifique cada tecnologia escolhida:
+
+**● Modelo de LLM e por quê:**
+
+* **Claude Sonnet**: melhor opção para o planejador, dado seu equilíbrio entre velocidade e capacidade de raciocínio, características essenciais para as tarefas exigidas.
+* **Claude Haiku**: versão mais rápida e com excelente custo-benefício, ajudando a otimizar o workflow e a escalabilidade da solução, sendo adequada para tarefas operacionais.
+
+**● Framework de agente (LangChain, CrewAI, Agno, SDK nativo, etc.)**
+
+* **Agno Framework**: possui recursos precisos para ativação de tools, direcionamento de dados e definição de comportamentos, como a aplicação da CULTURE.
+
+**● Banco de dados e modelo de dados**
+
+* **PostgreSQL**: escolhido devido à necessidade de armazenar dados estruturados, com suporte à adição de elementos JSON para dados dinâmicos.
+
+**● Ferramenta de orquestração/workflow (se aplicável)**
+
+* A definir conforme a necessidade de automação dos fluxos.
+
+**● Canal de comunicação e integrações utilizadas**
+
+* **E-mail (MailerSend)**: canal padrão para comunicação.
+* **WhatsApp (Twilio)**: utilizado para uma comunicação mais próxima e rápida com os participantes.
+
+**● Infraestrutura de deploy**
+
+* **Render**: solução Server as a Service, escolhida pela rapidez de implementação e otimização de tempo operacional.
+
+---
+
+## 3. Réguas de Comunicação
+
+### ● Descreva detalhadamente o fluxo de mensagens das duas réguas (pré e pós-evento)
+
+### Pré-evento
+
+1. E-mail de engajamento enviado 3 dias antes do evento, funcionando também como lembrete.
+2. E-mail de confirmação de participação enviado 2 dias antes do evento.
+3. Caso não haja confirmação, envio de um novo e-mail de confirmação 1 dia antes do evento para recuperação do lead.
+
+### Pós-evento
+
+Abordagem customizada pelo Planner. Será criada uma sequência de follow-up baseada no enriquecimento de dados do participante e nas atualizações relacionadas ao evento. A estratégia definirá quantidade de e-mails, sequência, frequência e momento ideal para cada comunicação.
+
+### ● Inclua as regras de negócio que você definiu (gatilhos, condições e timing)
+
+#### Janelas de envio
+
+Inicialmente para pré-evento janelas padroes com possiveis horarios de melhor aderencia de acordo com o lead:
+
+**Horários disponíveis:**
+
+* 09h
+* 14h
+* 20h
+
+**Tipos de evento:**
+
+* Follow-up
+* Confirmation
+
+#### E-mails/Mensagem padrão
+
+| Tipo            | Quando enviar                                                                   |
+| --------------- | ------------------------------------------------------------------------------- |
+| No-confirmation | 1 dia antes do evento                                                           |
+| Engajamento     | 3 dias antes ou 2 horas antes, caso o lead tenha confirmado via no-confirmation |
+
+Pós evento: Customizado.
+
+### ● Apresente ao menos um exemplo de mensagem personalizada para cada régua, demonstrando uso do enriquecimento de dados
+
+Consultar o dashboard. O contexto da mensagem é elaborado a partir da análise do lead, seu cargo, premissas associadas a esse cargo e contexto da empresa em que atua, permitindo identificar possíveis interesses e definir uma abordagem mais adequada.
+
+---
+
+## 4. Estratégia de Dados e Personalização
+
+### ● Como os dados dos leads serão coletados, armazenados e utilizados?
+
+Os dados serão coletados por meio de um webhook conectado ao formulário de participação do evento.
+
+### ● Como o enriquecimento funciona na prática? Quais fontes? Como o dado enriquecido é usado pelo agente?
+
+Existem duas vertentes:
+
+**Manual:** Dados oriundos de conhecimento interno e padrões definidos, baseados nas respostas do formulário, colabora para respostas unicas.
+
+**Dinâmico:** Utilização de web scraping para buscar informações adicionais sobre os participantes, bem como contexto relevante, como notícias, posts e conteúdos públicos.
+
+Com esses dados, é possível traçar um perfil de motivação do participante e configurar rotinas de comunicação mais adequadas.
+
+### ● Como você garante conformidade com a LGPD no tratamento dos dados dos participantes?
+
+O foco está em **consentimento** e **retenção de dados**.
+
+O formulário de captação possui um opt-in explícito autorizando o uso dos dados para finalidades relacionadas ao evento. Além disso, o banco de dados possui uma política de expiração (TTL), na qual dados sensíveis (PII) são anonimizados ou removidos após o término da régua comercial.
+
+Para utilização de LLMs, considera-se que a Anthropic não utiliza dados enviados via API para treinamento de modelos, contribuindo para a privacidade das informações trafegadas.
+
+Adicionalmente, os dados enviados aos agentes são anonimizados, removendo nomes ou qualquer outra informação que possa identificar diretamente uma pessoa.
+
+---
+
+## 5. Decisões Estratégicas e Racional
+
+### ● Quais foram as três principais decisões técnicas ou de produto que você tomou?
+
+**1. Formato de recebimento de dados via Webhook**
+
+* Considerando que o sistema pode ser desacoplado de outras soluções, o modelo baseado em webhook garante flexibilidade, adaptabilidade e facilidade de integração.
+
+**2. Agent Planner**
+
+* Definição de um processo estruturado de enriquecimento de dados, equilibrando custos e processamento para extrair os melhores insights.
+* Definição de janelas de envio para equilibrar e controlar as comunicações.
+
+**3. Adição de rastreabilidade**
+
+* Implementação de mecanismos para controle de custos, monitoramento e análise de performance dos agentes.
+
+### ● Quais alternativas você considerou e por que as descartou?
+
+**Uso de SDK nativo**
+
+* Maior tempo de desenvolvimento e menor flexibilidade para futuras integrações com outros modelos.
+
+**Agente normalizador de entrada de dados**
+
+* Embora útil, foi considerado pouco relevante para o cenário atual.
+
+### ● Que referências de mercado, cases ou frameworks embasaram suas escolhas?
+
+* usenexo.ai
+
+---
+
+## 6. Plano de Execução (Primeiros 5 dias)
+
+### ● Assuma que você começa amanhã: descreva os primeiros passos técnicos
+
+* Levantamento dos requisitos técnicos.
+* Entendimento do que já existe na operação.
+* Planejamento do lançamento, identificando o que é possível entregar dentro da janela disponível.
+* Quebra do projeto em etapas eficientes.
+* Definição e implementação do MVP inicial.
+
+### ● O que você provisionaria/configuraria primeiro e por quê?
+
+A arquitetura de dados seria a primeira prioridade, pois é o principal elemento em soluções que utilizam IA. Compreender os possíveis inputs, fluxos de processamento e outputs esperados auxilia na definição de toda a arquitetura do sistema.
+
+### ● Qual fase do funil você atacaria primeiro?
+
+Provavelmente a **personalização**, por ser o foco central do projeto. Compreender os fatores que impactam a personalização do workflow ajuda a validar o elemento mais importante do fluxo de dados e da proposta de valor da solução.
+
+---
+
+## Cenário de Escala
+
+**O Vigil Summit foi um sucesso. A Vigil.AI quer replicar o modelo para 10 eventos regionais simultâneos, cada um com perfis de público distintos (manufatura, saúde, financeiro e governo). Como você adaptaria a arquitetura para suportar isso sem reescrever o agente do zero?**
+
+Inicialmente, seria realizado um plano de otimização dos recursos computacionais com base nas interações e utilização dos agentes até o momento.
+
+A arquitetura poderia ser adaptada para escalar por meio de:
+
+* Maior utilização de mecanismos de cache.
+* Processamento paralelo de workloads.
+* Implementação de **Dynamic Prompts**, permitindo manter a mesma arquitetura de agentes enquanto os prompts são ajustados conforme o perfil de cada evento antes da execução dos workflows.
+* Migração para uma infraestrutura em nuvem mais robusta, como **AWS** ou **GCP**, utilizando sistemas distribuídos para garantir disponibilidade e escalabilidade.
+* Evolução da arquitetura de banco de dados com:
+
+  * Réplicas de leitura;
+  * Separação entre leitura e escrita;
+  * Pool de conexões;
+  * Estratégias de alta disponibilidade.
+* Aprimoramento das rotinas de execução, utilizando batches para schedulers, reduzindo custos e melhorando eficiência operacional.
+* Implementação de **Prompt Caching** e **Batch Processing**, reduzindo custos em cenários de alto volume e acelerando a execução dos agentes.

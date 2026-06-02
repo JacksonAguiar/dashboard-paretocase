@@ -1,0 +1,375 @@
+{
+    "cto": {
+        "linkedin": {
+            "url": "https://linkedin.com/in/found-via-scraping-cto",
+            "headline": "CTO @ TechCorp LATAM | Cloud Security | AWS | Kubernetes",
+            "summary": "Technology executive with 15+ years building and securing cloud-native platforms across LATAM. Currently leading digital transformation and security modernization at a Series C cybersecurity company. Speaker at Security BSides São Paulo 2024.",
+            "education": "B.Sc. Computer Science — USP | Executive MBA — FGV",
+            "connections_range": "500+",
+            "recent_activity": [
+                "Shared an article: 'Why Zero Trust is table stakes for cloud-native companies in 2025'",
+                "Commented on a post about SIEM consolidation trends in LATAM enterprises",
+                "Posted: 'We just completed our SOC 2 Type II audit. 6 months of work. Automation was the only way to get there at our team size.'"
+            ]
+        },
+        "news": [
+            {
+                "title": "TechCorp Announces LATAM Expansion with New São Paulo Engineering Hub",
+                "source": "TechCrunch LATAM",
+                "date": "2025-02-14",
+                "snippet": "The cybersecurity company plans to triple its engineering headcount in Brazil by end of 2025, citing growing enterprise demand for threat detection solutions."
+            },
+            {
+                "title": "TechCorp Raises $42M Series C to Accelerate AI-Powered Threat Detection",
+                "source": "Reuters",
+                "date": "2024-11-03",
+                "snippet": "The round was led by Sequoia Capital with participation from strategic investors in the cybersecurity space. Funds earmarked for R&D and LATAM go-to-market."
+            }
+        ],
+        "posts": [
+            {
+                "platform": "linkedin",
+                "date": "2025-05-20",
+                "content": "Alert fatigue is the silent killer of SOC teams. We cut our false positive rate by 68% last quarter by moving to a risk-scored alert model. Happy to share the framework.",
+                "likes": 312,
+                "comments": 47
+            },
+            {
+                "platform": "linkedin",
+                "date": "2025-04-08",
+                "content": "MTTD went from 4.2 hours to 38 minutes after we integrated behavioral analytics into our pipeline. The ROI math on that is impossible to argue with at the board level.",
+                "likes": 204,
+                "comments": 29
+            }
+        ]
+    },
+    "ciso": {
+        "linkedin": {
+            "url": "https://linkedin.com/in/found-via-scraping-ciso",
+            "headline": "CISO @ Regional Health Network | ISO 27001 Lead Auditor | LGPD | HIPAA",
+            "summary": "Information security executive responsible for protecting patient data across 12 hospital units and 3 research centers. Led the organization through two major ransomware incidents and full LGPD compliance roadmap. Certified CISSP and CISM.",
+            "education": "M.Sc. Information Security Management — Stanford University | B.Sc. Computer Engineering — PUC-RJ",
+            "connections_range": "500+",
+            "recent_activity": [
+                "Published an article: 'Board-Level Cyber Risk Reporting: What Actually Works'",
+                "Shared a case study on ransomware response in healthcare environments",
+                "Commented: 'LGPD enforcement is finally getting teeth. Organizations that haven't operationalized their DPA workflows are in for a rough 2025.'"
+            ]
+        },
+        "news": [
+            {
+                "title": "Regional Health Network Expands Security Infrastructure Following Ransomware Incident",
+                "source": "HealthcareIT News Brasil",
+                "date": "2025-01-22",
+                "snippet": "The network announced a $8M investment in cybersecurity modernization, including zero-trust network segmentation and endpoint detection across all hospital units."
+            },
+            {
+                "title": "ANPD Issues Guidance on LGPD Enforcement in Healthcare Sector",
+                "source": "ANPD Official Portal",
+                "date": "2025-03-10",
+                "snippet": "Regulators emphasized that healthcare organizations must demonstrate continuous monitoring and breach notification readiness, not just annual compliance audits."
+            }
+        ],
+        "posts": [
+            {
+                "platform": "linkedin",
+                "date": "2025-05-15",
+                "content": "We had a board meeting yesterday where I presented our cyber risk posture in business terms—not technical jargon. The conversation was completely different. Every CISO should have a risk quantification framework.",
+                "likes": 891,
+                "comments": 134
+            },
+            {
+                "platform": "blog",
+                "url": "https://securityleadership.io/ciso-board-reporting-2025",
+                "date": "2025-04-01",
+                "content": "After two ransomware incidents in 18 months, here's what I learned about incident response that no certification course teaches you.",
+                "estimated_reads": 4200
+            }
+        ]
+    },
+    "it_director": {
+        "linkedin": {
+            "url": "https://linkedin.com/in/found-via-scraping-it-director",
+            "headline": "IT Director @ ManufacturaBR | Microsoft 365 | Cisco | Hybrid Infrastructure",
+            "summary": "IT leader managing hybrid on-prem and Azure infrastructure for a 2,500-employee manufacturing group with 8 production facilities across Brazil. Focus on operational continuity, cost optimization, and OT/IT convergence.",
+            "education": "B.Sc. Information Systems — UNICAMP",
+            "connections_range": "500+",
+            "recent_activity": [
+                "Liked an article about Microsoft Defender integration with legacy OT environments",
+                "Shared: 'Microsoft just made it easier to extend Conditional Access to factory floor devices. About time.'",
+                "Commented on a post about zero-trust segmentation for manufacturing"
+            ]
+        },
+        "news": [
+            {
+                "title": "ManufacturaBR Modernizes Factory Floor Connectivity with OT/IT Convergence Project",
+                "source": "Valor Econômico",
+                "date": "2025-02-28",
+                "snippet": "The manufacturing group is investing R$12M in network modernization, connecting legacy PLCs to centralized monitoring while enforcing network segmentation policies."
+            }
+        ],
+        "posts": [
+            {
+                "platform": "linkedin",
+                "date": "2025-04-22",
+                "content": "Managing 3,000 endpoints across 8 factories with a 4-person IT team. Automation is not optional, it's a survival strategy. Looking at solutions that reduce manual intervention without adding yet another tool dashboard.",
+                "likes": 78,
+                "comments": 12
+            }
+        ]
+    },
+    "compliance_officer": {
+        "linkedin": {
+            "url": "https://linkedin.com/in/found-via-scraping-compliance",
+            "headline": "Compliance & Risk Officer @ FinTechBR | PCI DSS 4.0 | LGPD | SOX",
+            "summary": "Compliance executive driving regulatory alignment at a high-growth fintech operating in open banking. Currently leading PCI DSS 4.0 transition and building a GRC program from the ground up. Former compliance attorney at a Big Four firm.",
+            "education": "LL.B. Law — Harvard Law School | LL.M. Financial Regulation — FGV",
+            "connections_range": "500+",
+            "recent_activity": [
+                "Published: 'PCI DSS 4.0 Is Here: What Fintechs Need to Do in the Next 90 Days'",
+                "Shared an ANPD enforcement action summary",
+                "Commented: 'Manual evidence collection for audits in 2025 is a liability, not just inefficiency.'"
+            ]
+        },
+        "news": [
+            {
+                "title": "FinTechBR Secures Open Banking License, Accelerates Compliance Program",
+                "source": "Fintech Mercado",
+                "date": "2025-03-05",
+                "snippet": "The company must now meet BACEN's open banking security requirements within 6 months, triggering an accelerated compliance and security review program."
+            },
+            {
+                "title": "PCI DSS 4.0 Deadline Approaches: Brazilian Fintechs Scramble for Compliance",
+                "source": "Security Week Brasil",
+                "date": "2025-04-01",
+                "snippet": "Industry analysts estimate 40% of Brazilian fintechs are behind schedule on PCI DSS 4.0 transition, citing manual assessment processes as the primary bottleneck."
+            }
+        ],
+        "posts": [
+            {
+                "platform": "linkedin",
+                "date": "2025-05-10",
+                "content": "We just cut our audit evidence collection time from 3 weeks to 4 days. The key was treating compliance as a continuous monitoring problem, not an annual project.",
+                "likes": 445,
+                "comments": 67
+            }
+        ]
+    },
+    "devops_lead": {
+        "linkedin": {
+            "url": "https://linkedin.com/in/found-via-scraping-devops",
+            "headline": "DevOps Lead @ CloudStartup | Terraform | GitHub Actions | Kubernetes Security",
+            "summary": "Platform engineer building secure, scalable infrastructure for a Series B SaaS company. Passionate about shifting security left without sacrificing deployment velocity. Contributor to open-source IaC security tooling.",
+            "education": "B.Sc. Software Engineering — ITA",
+            "connections_range": "500+",
+            "recent_activity": [
+                "Opened a GitHub issue on an IaC security scanner for a Terraform policy gap",
+                "Shared: 'We moved to ephemeral credentials with HashiCorp Vault and eliminated 100% of long-lived secrets in our pipeline.'",
+                "Posted about a supply chain attack on a popular npm package affecting their stack"
+            ]
+        },
+        "news": [
+            {
+                "title": "CloudStartup Raises Series B to Scale AI-Native Security Platform",
+                "source": "Startups.com.br",
+                "date": "2024-12-10",
+                "snippet": "The $28M round will fund engineering expansion and go-to-market in enterprise. Investors cited strong ARR growth driven by DevSecOps demand from Series B+ companies."
+            },
+            {
+                "title": "Critical Vulnerability Found in Popular Terraform Provider Used by 10,000+ Organizations",
+                "source": "The Hacker News",
+                "date": "2025-04-18",
+                "snippet": "The vulnerability allows privilege escalation in cloud environments using misconfigured IAM roles. Patch available; immediate update recommended."
+            }
+        ],
+        "posts": [
+            {
+                "platform": "linkedin",
+                "date": "2025-05-02",
+                "content": "Hot take: if your security scans run after the pull request is merged, you don't have shift-left security. You have shift-center security. The gate needs to be at review time.",
+                "likes": 1204,
+                "comments": 189
+            },
+            {
+                "platform": "github",
+                "url": "https://github.com/open-source-sec/iac-policy-checks",
+                "date": "2025-04-25",
+                "content": "Contributed 3 new Terraform policy checks for S3 bucket public access misconfigurations",
+                "stars": 342
+            }
+        ]
+    },
+    "security_manager": {
+        "linkedin": {
+            "url": "https://linkedin.com/in/found-via-scraping-sec-manager",
+            "headline": "Security Operations Manager @ RetailMega | SOC Lead | Splunk | Threat Intelligence",
+            "summary": "Building and scaling a 12-person SOC for one of Brazil's largest e-commerce platforms. Focused on reducing alert fatigue, automating tier-1 triage, and improving analyst retention. Speaker at BSides Recife 2024.",
+            "education": "B.Sc. Computer Science — UFPE | GCIA — SANS Institute",
+            "connections_range": "500+",
+            "recent_activity": [
+                "Shared an article on SOC automation trends for 2025",
+                "Posted a job opening for a senior threat intelligence analyst",
+                "Commented: 'We reduced our false positive rate by 71% in Q1. The secret: better tuning, not more tools.'"
+            ]
+        },
+        "news": [
+            {
+                "title": "RetailMega Strengthens Cybersecurity Posture Ahead of Black Friday Peak Season",
+                "source": "E-Commerce Brasil",
+                "date": "2025-09-15",
+                "snippet": "The retailer is investing heavily in real-time fraud detection and SOC capacity expansion ahead of the November peak, following a web skimmer incident that affected 180,000 customers."
+            }
+        ],
+        "posts": [
+            {
+                "platform": "linkedin",
+                "date": "2025-05-08",
+                "content": "My team handled 47,000 alerts last month. We escalated 312. That's a 0.66% escalation rate — and we still feel overwhelmed. Something is broken in how we measure SOC performance.",
+                "likes": 2341,
+                "comments": 312
+            }
+        ]
+    },
+    "soc_analyst": {
+        "linkedin": {
+            "url": "https://linkedin.com/in/found-via-scraping-soc-analyst",
+            "headline": "SOC Analyst T2 @ CloudServices | Threat Hunting | MITRE ATT&CK | Chronicle",
+            "summary": "Tier 2 security analyst specializing in cloud threat hunting and incident response. MITRE ATT&CK practitioner with focus on adversary simulation and detection engineering. CTF participant and DFIR community contributor.",
+            "education": "B.Sc. Information Security — Carnegie Mellon | CEH, GCIH",
+            "connections_range": "500+",
+            "recent_activity": [
+                "Shared a MITRE ATT&CK technique analysis for a new cloud lateral movement TTP",
+                "Commented on a thread about SOAR playbook optimization",
+                "Posted: 'Spent 3 hours this week manually enriching IOCs that should have been automated. This is not a people problem.'"
+            ]
+        },
+        "news": [
+            {
+                "title": "CloudProvider Launches Dedicated Threat Intelligence Team to Combat Nation-State Actors",
+                "source": "CRN Brasil",
+                "date": "2025-03-20",
+                "snippet": "The cloud services company announced expansion of its security operations center and dedicated threat intel team following a series of sophisticated attacks targeting cloud workloads."
+            }
+        ],
+        "posts": [
+            {
+                "platform": "linkedin",
+                "date": "2025-05-14",
+                "content": "If you're still manually pivoting between 6 tools for a single alert investigation, your org is not doing threat hunting. It's doing threat tourism. Automation isn't optional at this threat volume.",
+                "likes": 876,
+                "comments": 98
+            }
+        ]
+    },
+    "analyst": {
+        "linkedin": {
+            "url": "https://linkedin.com/in/found-via-scraping-analyst",
+            "headline": "Information Security Analyst @ BancoBR | Azure Sentinel | LGPD | SOC 2",
+            "summary": "Security analyst at a top-5 Brazilian bank with focus on cloud security posture and compliance monitoring. Recently led the organization's SOC 2 Type II readiness assessment. Studying for CISSP.",
+            "education": "B.Sc. Cybersecurity — FIAP | AZ-500 Microsoft Certified",
+            "connections_range": "500+",
+            "recent_activity": [
+                "Shared a post on Azure Sentinel KQL query optimization for LGPD audit trail monitoring",
+                "Commented on an article about SOC 2 automation in Brazilian banks",
+                "Liked a post about CrowdStrike Falcon integration with Azure Sentinel"
+            ]
+        },
+        "news": [
+            {
+                "title": "BancoBR Completes SOC 2 Type II Audit, Strengthens Cloud Security Program",
+                "source": "Valor Econômico Financeiro",
+                "date": "2025-02-10",
+                "snippet": "The bank's successful SOC 2 audit follows a 12-month security modernization effort that included migrating security monitoring to cloud-native SIEM and expanding EDR coverage."
+            },
+            {
+                "title": "BACEN Raises Cybersecurity Requirements for Brazilian Financial Institutions",
+                "source": "Banco Central do Brasil",
+                "date": "2025-04-01",
+                "snippet": "New circular requires financial institutions to demonstrate continuous threat monitoring, incident response capability, and executive-level cyber risk governance by December 2025."
+            }
+        ],
+        "posts": [
+            {
+                "platform": "linkedin",
+                "date": "2025-05-06",
+                "content": "Just finished our SOC 2 Type II assessment. 6 months of evidence gathering, control testing, and policy updates. The most painful part? 80% of it was manual. There has to be a better way.",
+                "likes": 156,
+                "comments": 28
+            }
+        ]
+    },
+    "data_protection_officer": {
+        "linkedin": {
+            "url": "https://linkedin.com/in/found-via-scraping-dpo",
+            "headline": "DPO @ LexCorp | LGPD | GDPR | Data Privacy Law | IAPP CIPP/E",
+            "summary": "Data Protection Officer at a legal and consulting firm handling sensitive client privilege data. IAPP-certified privacy professional. Regular speaker at ANPD workshops and privacy law conferences in Brazil.",
+            "education": "LL.B. Law — Oxford University | LL.M. Technology and Data Law — FGV | CIPP/E — IAPP",
+            "connections_range": "500+",
+            "recent_activity": [
+                "Published: 'ANPD's First Major Enforcement Action: What Every DPO Needs to Know'",
+                "Shared a template for Data Subject Access Request (DSAR) workflow automation",
+                "Commented: 'The organizations that treat LGPD as a checkbox exercise are the ones showing up in ANPD enforcement notices.'"
+            ]
+        },
+        "news": [
+            {
+                "title": "ANPD Issues R$2.4M Fine in First Major LGPD Enforcement Action",
+                "source": "ANPD Official",
+                "date": "2025-04-15",
+                "snippet": "The penalty targeted a financial services company for failure to implement adequate security measures and delayed breach notification, establishing precedent for future enforcement."
+            },
+            {
+                "title": "Law Firms Face Increasing Cyber Threats Targeting Privileged Client Communications",
+                "source": "Migalhas",
+                "date": "2025-03-08",
+                "snippet": "Threat actors are increasingly targeting legal firms to access M&A intelligence and privileged communications. Security experts recommend enhanced monitoring for document management systems."
+            }
+        ],
+        "posts": [
+            {
+                "platform": "linkedin",
+                "date": "2025-05-18",
+                "content": "The ANPD fine that dropped this week wasn't about malice. It was about a company that couldn't prove it had done the right things. Documentation and audit trails matter as much as the controls themselves.",
+                "likes": 1890,
+                "comments": 267
+            }
+        ]
+    },
+    "network_admin": {
+        "linkedin": {
+            "url": "https://linkedin.com/in/found-via-scraping-network-admin",
+            "headline": "Senior Network Admin @ UniversidadeBR | Zero Trust | Fortinet | Cisco ISE | 10k+ Devices",
+            "summary": "Network administrator managing a flat 40Gbps campus network serving 50,000 students and staff across 3 campuses. Currently leading zero-trust architecture migration project. Dealing with an influx of IoT lab devices that can't run traditional agents.",
+            "education": "B.Sc. Network Engineering — UFMG | FCNSP Fortinet Certified",
+            "connections_range": "500+",
+            "recent_activity": [
+                "Shared a post on Cisco ISE integration with passive device fingerprinting for IoT",
+                "Commented on a thread about zero-trust in education environments",
+                "Posted: 'When 30% of your network devices are IoT lab equipment that will never support an agent, you need a different approach to visibility.'"
+            ]
+        },
+        "news": [
+            {
+                "title": "UniversidadeBR Launches Zero-Trust Network Architecture Project for Multi-Campus Environment",
+                "source": "Convergência Digital",
+                "date": "2025-01-30",
+                "snippet": "The university is implementing micro-segmentation and continuous device authentication across three campuses following two ransomware incidents targeting research data in 2024."
+            },
+            {
+                "title": "Education Sector Sees 340% Increase in Ransomware Attacks Targeting Brazilian Institutions",
+                "source": "TechTudo",
+                "date": "2025-03-12",
+                "snippet": "Ransomware gangs are increasingly targeting universities for their research data and relatively weaker security postures compared to enterprise environments."
+            }
+        ],
+        "posts": [
+            {
+                "platform": "linkedin",
+                "date": "2025-04-30",
+                "content": "We had a rogue device on our research network for 17 days before we noticed it. No agent, no EDR, firewall logs were too noisy to see it. East-west visibility is not optional when you have 10,000 endpoints.",
+                "likes": 423,
+                "comments": 61
+            }
+        ]
+    }
+}

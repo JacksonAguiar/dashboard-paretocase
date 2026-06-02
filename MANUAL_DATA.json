@@ -1,0 +1,292 @@
+{
+    "profiles": {
+        "cto": {
+            "actual_title": "Chief Technology Officer",
+            "level": "C-Suite",
+            "decision_role": "Economic Buyer",
+            "typical_sectors": ["Technology / Cybersecurity", "Technology / SaaS", "Technology / Cloud Services"],
+            "typical_company_size": "200-500 employees",
+            "technologies_used": ["AWS", "Kubernetes", "SIEM Splunk", "Terraform", "GitHub Actions"],
+            "icp_score": 92,
+            "concerns": ["Business risk and technology strategy alignment", "Resource allocation and ROI", "Vendor lock-in and integration complexity", "Security posture vs. speed-to-market tradeoff"],
+            "pain_points": ["Security tools not integrated into CI/CD pipeline", "Alert fatigue slowing engineering velocity", "Lack of unified visibility across cloud and on-prem", "Hiring and retaining senior security talent"],
+            "approach": "Lead with business outcomes, competitive advantage, and strategic risk reduction. Use industry benchmarks, board-level language, and quantifiable metrics. Avoid feature lists.",
+            "messaging_tone": "Strategic partner and innovation enabler",
+            "key_metrics": ["Risk reduction percentage", "MTTD/MTTR improvement", "Operational cost savings", "Time to market for secure releases"],
+            "objections": ["We already have a SIEM", "Budget is locked for this quarter", "Our team is too small to adopt another tool"],
+            "objection_handling": "Focus on consolidation, automation ROI, and time-to-value; offer a phased rollout or a 30-day PoC."
+        },
+        "ciso": {
+            "actual_title": "Chief Information Security Officer",
+            "level": "C-Suite",
+            "decision_role": "Economic Buyer / Governance Lead",
+            "typical_sectors": ["Healthcare", "Financial / Banking", "Government / Public Sector"],
+            "typical_company_size": "5000-10000 employees",
+            "technologies_used": ["Palo Alto Networks", "SentinelOne", "Okta", "CrowdStrike", "Microsoft Sentinel"],
+            "icp_score": 95,
+            "concerns": ["Regulatory compliance (LGPD, ISO 27001, SOC 2, HIPAA)", "Board-level risk reporting", "Incident response preparedness", "Third-party and supply chain risk"],
+            "pain_points": ["Difficulty quantifying cyber risk in business terms for the board", "Fragmented tooling across business units", "Ransomware and zero-day exposure", "Audit fatigue and compliance overhead"],
+            "approach": "Lead with compliance alignment, risk quantification, and board-ready reporting narratives. Demonstrate how Vigil.AI reduces audit burden and maps to regulatory frameworks. Use peer benchmarks from the same sector.",
+            "messaging_tone": "Risk governance authority and compliance enabler",
+            "key_metrics": ["Compliance coverage percentage", "Mean time to respond (MTTR)", "Vulnerability exposure window reduction", "Security ROI for board reporting"],
+            "objections": ["We are in the middle of a compliance audit", "We need sign-off from legal before any new vendor"],
+            "objection_handling": "Offer compliance-first collateral (SOC 2, ISO 27001 mapping docs) and a legal/procurement-friendly trial agreement."
+        },
+        "it_director": {
+            "actual_title": "IT Director",
+            "level": "Senior Management",
+            "decision_role": "Influencer / Budget Holder (mid-market)",
+            "typical_sectors": ["Manufacturing", "Retail / E-commerce", "Education"],
+            "typical_company_size": "1000-5000 employees",
+            "technologies_used": ["Microsoft 365", "Cisco Secure", "VMware", "Active Directory", "Fortinet"],
+            "icp_score": 65,
+            "concerns": ["IT budget constraints", "Keeping legacy systems secure", "Supporting remote and hybrid workforce", "Vendor consolidation"],
+            "pain_points": ["Too many disparate tools with no single pane of glass", "IT staff overloaded with both ops and security tasks", "Difficulty prioritizing vulnerabilities with limited team", "Shadow IT creating unmanaged risk"],
+            "approach": "Emphasize operational simplicity, centralized management, and cost consolidation. Show how Vigil.AI reduces the burden on small IT teams without requiring a dedicated security headcount.",
+            "messaging_tone": "Efficiency champion and trusted IT operations ally",
+            "key_metrics": ["Tickets reduced", "Patch cycle time", "Unmanaged device count", "Incidents per quarter"],
+            "objections": ["We don't have a dedicated security team to manage this", "We're already paying for Microsoft Defender"],
+            "objection_handling": "Highlight co-managed SOC options and Microsoft stack native integration."
+        },
+        "compliance_officer": {
+            "actual_title": "Compliance and Risk Officer",
+            "level": "Senior Management",
+            "decision_role": "Governance / Compliance Gatekeeper",
+            "typical_sectors": ["Financial / Fintech", "Healthcare", "Legal / Consulting"],
+            "typical_company_size": "200-500 employees",
+            "technologies_used": ["ServiceNow", "RSA Archer", "MetricStream", "OneTrust"],
+            "icp_score": 82,
+            "concerns": ["Regulatory penalties and audit failures", "Data breach liability", "PCI DSS, LGPD, GDPR, SOX alignment", "Evidence of due diligence for legal exposure"],
+            "pain_points": ["Manual evidence collection for audits", "Lack of continuous control monitoring", "Siloed risk data across departments", "Insufficient visibility into third-party risks"],
+            "approach": "Position Vigil.AI as a compliance evidence engine. Lead with automated control mapping, audit trail generation, and regulatory framework alignment. Speak the language of risk registers and control frameworks.",
+            "messaging_tone": "Compliance confidence builder and audit-ready partner",
+            "key_metrics": ["Control coverage percentage", "Audit evidence collection time", "Open finding resolution rate", "Time to compliance certification"],
+            "objections": ["Our legal team needs to review any data processing agreements", "We already have GRC software"],
+            "objection_handling": "Offer pre-signed DPA, highlight integrations with existing GRC platforms."
+        },
+        "devops_lead": {
+            "actual_title": "DevOps Lead",
+            "level": "Technical Lead",
+            "decision_role": "Champion / Technical Evaluator",
+            "typical_sectors": ["Technology / SaaS", "Technology / Cloud Services"],
+            "typical_company_size": "100-200 employees",
+            "technologies_used": ["Docker", "Terraform", "GitHub Actions", "Datadog", "HashiCorp Vault", "ArgoCD"],
+            "icp_score": 71,
+            "concerns": ["Security slowing down deployment velocity", "Secrets and credentials management", "Container and IaC misconfiguration", "Supply chain security for open-source dependencies"],
+            "pain_points": ["Shift-left security is theory, not practice in their pipeline", "Developers ignoring security alerts due to noise", "No runtime protection for containerized workloads", "Manual security gates delaying CI/CD"],
+            "approach": "Lead with DevSecOps integration and developer-first UX. Show frictionless pipeline integration (GitHub Actions, GitLab CI native), automated policy-as-code, and how Vigil.AI catches issues before they reach production.",
+            "messaging_tone": "DevSecOps enabler and developer-friendly security layer",
+            "key_metrics": ["Vulnerabilities caught pre-merge", "Secrets exposure incidents", "Security gate cycle time", "MTTR for container CVEs"],
+            "objections": ["We already scan with Snyk/Trivy", "We don't want to slow down our pipelines"],
+            "objection_handling": "Emphasize complementarity with existing scanners, runtime context they lack, and zero-friction async mode."
+        },
+        "security_manager": {
+            "actual_title": "Security Operations Manager",
+            "level": "Manager",
+            "decision_role": "Champion / Operational Decision Maker",
+            "typical_sectors": ["Retail / E-commerce", "Technology / Cloud Services", "Financial / Fintech"],
+            "typical_company_size": "500-1000 employees",
+            "technologies_used": ["Splunk", "Zscaler", "Proofpoint", "CrowdStrike", "PagerDuty"],
+            "icp_score": 78,
+            "concerns": ["Alert fatigue and analyst burnout", "Coverage gaps across the kill chain", "Measuring SOC performance and ROI", "Hiring and retaining SOC talent"],
+            "pain_points": ["Analysts spending 60%+ of time on false positives", "Fragmented tools creating investigation context-switching", "Lack of automated triage for high-volume alerts", "Difficulty demonstrating SOC value to leadership"],
+            "approach": "Lead with SOC efficiency, automated triage, and analyst experience improvement. Show concrete reduction in MTTD, false positive rate, and how Vigil.AI becomes a force multiplier for the existing team.",
+            "messaging_tone": "SOC efficiency expert and analyst experience champion",
+            "key_metrics": ["Alert volume reduction", "False positive rate", "MTTD (Mean Time to Detect)", "Analyst alerts handled per shift"],
+            "objections": ["My team is already overwhelmed with tooling", "We're mid-deployment of another SIEM integration"],
+            "objection_handling": "Offer a parallel PoC with minimal integration overhead; show side-by-side comparison metrics."
+        },
+        "soc_analyst": {
+            "actual_title": "SOC Analyst Tier 2",
+            "level": "Technical/Operational",
+            "decision_role": "Champion / End User",
+            "typical_sectors": ["Technology / Cloud Services", "Financial / Banking", "Healthcare"],
+            "typical_company_size": "500-1000 employees",
+            "technologies_used": ["Chronicle", "VirusTotal", "MISP", "TheHive", "Cortex XSOAR"],
+            "icp_score": 74,
+            "concerns": ["Investigation efficiency and pivot speed", "Threat intel quality and enrichment", "Staying current on TTPs and emerging threats", "Work-life balance under high alert load"],
+            "pain_points": ["Manual enrichment eating investigation time", "Context switching between 5+ tools per alert", "Alert queue never shrinking despite best efforts", "Lack of automated playbooks for repetitive incidents"],
+            "approach": "Treat as a Champion who influences upward. Lead with hands-on demo of automated investigation workflows, MITRE ATT&CK correlation, and one-click enrichment. Make them the hero who brings the solution to the manager.",
+            "messaging_tone": "Analyst productivity booster and threat hunting enabler",
+            "key_metrics": ["Alerts triaged per hour", "Mean time to investigate (MTTI)", "Playbook automation rate", "MITRE ATT&CK coverage"],
+            "objections": ["I'd need my manager's approval for any new tool", "We just rolled out a new SOAR"],
+            "objection_handling": "Position as a complement to SOAR; offer a workshop or CTF-style demo to build internal advocacy."
+        },
+        "analyst": {
+            "actual_title": "Information Security Analyst",
+            "level": "Technical/Operational",
+            "decision_role": "Champion / Technical Influencer",
+            "typical_sectors": ["Financial / Banking", "Healthcare", "Government / Public Sector"],
+            "typical_company_size": "1000-5000 employees",
+            "technologies_used": ["Azure Sentinel", "CrowdStrike", "Fortinet", "Tenable", "Qualys"],
+            "icp_score": 68,
+            "concerns": ["Daily threat management and prioritization", "Tool effectiveness and coverage accuracy", "Workload optimization and automation", "Professional development and certifications"],
+            "pain_points": ["Vulnerability overload with no clear risk-based prioritization", "Poor integration between endpoint, network, and cloud tools", "Manual reporting consuming time better spent on analysis", "Lack of visibility into lateral movement post-compromise"],
+            "approach": "Emphasize ease of use, automation capabilities, hands-on demo, and day-to-day operational improvements. Treat as the internal champion who will advocate upward. Show them how Vigil.AI makes their job easier and their work more impactful.",
+            "messaging_tone": "Technical expert and productivity booster",
+            "key_metrics": ["MTTD (Mean Time to Detect)", "False positive reduction percentage", "Alert correlation accuracy", "Vulnerabilities remediated per sprint"],
+            "objections": ["We're locked into our current toolset by contract", "I'm not the decision maker here"],
+            "objection_handling": "Empower them with business case templates and ROI data to champion internally; offer a free PoC report they can present."
+        },
+        "data_protection_officer": {
+            "actual_title": "Data Protection Officer",
+            "level": "Senior Management / Legal",
+            "decision_role": "Compliance Gatekeeper / Veto Power",
+            "typical_sectors": ["Legal / Consulting", "Healthcare", "Financial / Fintech"],
+            "typical_company_size": "50-100 employees",
+            "technologies_used": ["OneTrust", "BigID", "Varonis", "Spirion"],
+            "icp_score": 88,
+            "concerns": ["LGPD and GDPR compliance gaps", "Data subject rights request handling", "Cross-border data transfer legality", "Breach notification obligations and timelines"],
+            "pain_points": ["No automated data discovery and classification", "Manual DSAR (Data Subject Access Request) processing", "Lack of real-time monitoring for unauthorized data access", "Proving lawful basis of processing to regulators"],
+            "approach": "Lead with privacy-by-design principles, automated data discovery, breach detection speed, and regulatory framework mapping. Demonstrate how Vigil.AI reduces DPO workload and provides defensible compliance posture.",
+            "messaging_tone": "Privacy compliance enabler and regulator-ready partner",
+            "key_metrics": ["DSAR response time", "Data discovery coverage", "Breach detection to notification time", "Data processing register completeness"],
+            "objections": ["We need to review your data processing agreement first", "We use a dedicated privacy management platform already"],
+            "objection_handling": "Provide pre-signed LGPD/GDPR DPA and integration overview with existing privacy tools."
+        },
+        "network_admin": {
+            "actual_title": "Senior Network Administrator",
+            "level": "Technical/Operational",
+            "decision_role": "Technical Influencer",
+            "typical_sectors": ["Education", "Government / Public Sector", "Healthcare"],
+            "typical_company_size": "5000-10000 employees",
+            "technologies_used": ["Fortinet", "Aruba", "Cisco ISE", "Palo Alto Firewall", "Wireshark"],
+            "icp_score": 59,
+            "concerns": ["Network segmentation and zero-trust architecture", "Unauthorized device detection", "Bandwidth and performance impact of security tools", "Managing complex multi-campus or multi-branch topology"],
+            "pain_points": ["Limited east-west traffic visibility inside the network perimeter", "Legacy OT/IoT devices that cannot run agents", "Flat network segments creating lateral movement risk", "Slow incident response due to lack of network forensics"],
+            "approach": "Lead with network-native threat detection, agentless visibility for IoT/OT environments, and minimal performance footprint. Show network topology awareness and east-west traffic analysis that complements firewall logs.",
+            "messaging_tone": "Network security specialist and zero-trust architect ally",
+            "key_metrics": ["Unauthorized device detection rate", "East-west threat detection coverage", "Mean time to isolate compromised segment", "Network forensics investigation time"],
+            "objections": ["We have firewall and IDS coverage already", "Our budget is managed by central IT, not me"],
+            "objection_handling": "Show complementary coverage gaps firewalls miss (encrypted lateral movement, rogue devices); offer agentless deployment PoC."
+        }
+    },
+    "categories": {
+        "company_size": {
+            "50-100 employees": {
+                "description": "Small businesses with lean teams and founder-led decisions",
+                "icp_approach": "Emphasize simplicity, quick deployment, and direct ROI. Decision cycle is short but budget is tight.",
+                "pain_points": ["No dedicated security headcount", "Compliance requirements growing faster than team capacity"],
+                "decision_factors": ["Ease of use", "Price", "Time to value"]
+            },
+            "100-200 employees": {
+                "description": "Growing startups transitioning from informal to structured security practices",
+                "icp_approach": "Lead with scalability, DevSecOps integration, and investor/compliance readiness (SOC 2, ISO).",
+                "pain_points": ["Technical debt in security posture", "Preparing for first security audit"],
+                "decision_factors": ["Integration with existing dev stack", "Compliance certification support", "Scalability"]
+            },
+            "200-500 employees": {
+                "description": "Mid-market companies with agile decision-making and growing security needs",
+                "icp_approach": "Focus on ROI, quick implementation, and scalability without enterprise complexity.",
+                "pain_points": ["Limited security team resources", "Need for automation", "Budget constraints vs. security needs"],
+                "decision_factors": ["Time to value", "Total cost of ownership", "Ease of integration"]
+            },
+            "500-1000 employees": {
+                "description": "Upper mid-market with dedicated security teams and increasing regulatory exposure",
+                "icp_approach": "Emphasize SOC efficiency, compliance reporting, and multi-stakeholder value (CISO + SecOps + IT).",
+                "pain_points": ["Alert fatigue", "Compliance overhead", "Tool proliferation"],
+                "decision_factors": ["Operational efficiency gains", "Compliance alignment", "Support quality"]
+            },
+            "1000-5000 employees": {
+                "description": "Large enterprises with complex security requirements and formal procurement processes",
+                "icp_approach": "Emphasize compliance, governance, and enterprise-grade features. Multi-stakeholder sales process.",
+                "pain_points": ["Tool sprawl and integration challenges", "Compliance requirements", "Alert fatigue"],
+                "decision_factors": ["Compliance certifications", "Vendor reputation", "Enterprise support"]
+            },
+            "5000-10000 employees": {
+                "description": "Enterprise accounts with mature security programs and complex governance structures",
+                "icp_approach": "Lead with enterprise integrations, compliance frameworks, and executive-level business risk quantification.",
+                "pain_points": ["Fragmented tooling across business units", "Third-party risk", "Board-level reporting complexity"],
+                "decision_factors": ["Enterprise SLAs", "Regulatory compliance", "Reference customers", "Global support coverage"]
+            }
+        },
+        "sector": {
+            "Technology / Cybersecurity": {
+                "characteristics": "High technical sophistication, early adopters, security is a product differentiator",
+                "icp_approach": "Lead with advanced features and technical differentiation. Reference similar companies and open-source integrations.",
+                "concerns": ["Staying ahead of threats", "Tool integration", "Talent retention"],
+                "use_cases": ["Advanced threat detection", "Zero trust implementation", "DevSecOps integration"]
+            },
+            "Technology / SaaS": {
+                "characteristics": "Velocity-driven, cloud-native, DevOps culture, SOC 2 compliance pressure from enterprise customers",
+                "icp_approach": "Lead with developer-friendly security and compliance acceleration for enterprise sales motion.",
+                "concerns": ["Security slowing product velocity", "Customer trust and SOC 2 certification", "Secrets and dependency management"],
+                "use_cases": ["SOC 2 automation", "SAST/DAST pipeline integration", "Cloud security posture management"]
+            },
+            "Technology / Cloud Services": {
+                "characteristics": "Infrastructure-centric, multi-tenant, SLA-driven, attack surface is the product itself",
+                "icp_approach": "Lead with runtime protection, tenant isolation, and infrastructure attack surface monitoring.",
+                "concerns": ["Multi-tenant isolation", "Kubernetes and container security", "DDoS and API abuse"],
+                "use_cases": ["Container runtime security", "API threat detection", "Cloud workload protection"]
+            },
+            "Financial / Banking": {
+                "characteristics": "Regulated, risk-averse, compliance-driven, high-value target for fraud and nation-state actors",
+                "icp_approach": "Lead with compliance, audit trails, and regulatory alignment. Emphasize stability and proven track record.",
+                "concerns": ["Regulatory compliance (BACEN, CVM, LGPD)", "Data privacy", "Fraud prevention", "Business continuity"],
+                "use_cases": ["Compliance automation", "Fraud detection", "Audit logging", "Data protection"]
+            },
+            "Financial / Fintech": {
+                "characteristics": "Agile compliance posture, rapid growth, mix of traditional finance regulations with startup culture",
+                "icp_approach": "Balance innovation enablement with compliance readiness. Reference PCI DSS 4.0, LGPD, and open banking frameworks.",
+                "concerns": ["PCI DSS compliance", "API security", "Third-party partner risk", "Regulatory sandbox navigation"],
+                "use_cases": ["PCI DSS automation", "API security monitoring", "Third-party risk assessment"]
+            },
+            "Healthcare": {
+                "characteristics": "Critical infrastructure, patient data sensitivity, legacy systems, ransomware top threat vector",
+                "icp_approach": "Lead with patient data protection, ransomware resilience, and LGPD/HIPAA compliance alignment.",
+                "concerns": ["Patient data breaches", "Ransomware targeting healthcare", "Connected medical device security", "LGPD compliance"],
+                "use_cases": ["Ransomware detection and containment", "Medical device security monitoring", "LGPD compliance automation"]
+            },
+            "Manufacturing": {
+                "characteristics": "OT/IT convergence, industrial control system exposure, supply chain complexity",
+                "icp_approach": "Lead with OT/ICS visibility, agentless monitoring for industrial devices, and operational continuity.",
+                "concerns": ["OT/ICS network exposure", "Production downtime from cyberattacks", "Supply chain attacks", "Legacy industrial systems"],
+                "use_cases": ["OT/ICS threat detection", "Network segmentation monitoring", "Supply chain integrity verification"]
+            },
+            "Retail / E-commerce": {
+                "characteristics": "High transaction volume, PCI DSS scope, seasonal peak attack surface, customer data at scale",
+                "icp_approach": "Lead with PCI DSS compliance, fraud detection at scale, and seasonal peak readiness.",
+                "concerns": ["PCI DSS compliance", "Customer data protection", "Peak season DDoS and skimming attacks", "E-commerce fraud"],
+                "use_cases": ["PCI DSS monitoring", "Web skimmer detection", "Fraud pattern analysis"]
+            },
+            "Education": {
+                "characteristics": "Large flat networks, high device diversity, underfunded security teams, compliance growing (LGPD for student data)",
+                "icp_approach": "Lead with network visibility at scale, agentless deployment for BYOD environments, and low-cost compliance coverage.",
+                "concerns": ["Student data privacy (LGPD)", "Network segmentation", "Ransomware targeting educational institutions", "BYOD device management"],
+                "use_cases": ["Network anomaly detection", "BYOD visibility", "Student data privacy monitoring"]
+            },
+            "Legal / Consulting": {
+                "characteristics": "Small teams, high data sensitivity (client privilege), increasing M&A due diligence security requirements",
+                "icp_approach": "Lead with client data confidentiality, privilege protection, and lean deployment with minimal overhead.",
+                "concerns": ["Client confidentiality and attorney-client privilege", "Insider threat risk", "M&A target attractiveness and security due diligence"],
+                "use_cases": ["Insider threat detection", "Privileged data access monitoring", "M&A security due diligence support"]
+            },
+            "Government / Public Sector": {
+                "characteristics": "Procurement-heavy, national security compliance requirements, legacy infrastructure, critical infrastructure designation",
+                "icp_approach": "Lead with compliance with government security frameworks, sovereign data handling, and critical infrastructure protection.",
+                "concerns": ["Nation-state threat actors", "Critical infrastructure protection", "Government compliance frameworks", "Legacy system modernization"],
+                "use_cases": ["Critical infrastructure monitoring", "Government framework compliance (NIST, LGPD)", "Legacy system threat detection"]
+            }
+        }
+    },
+    "icp_scoring": {
+        "tier_a": {
+            "range": "80-100",
+            "label": "Tier A — High Priority",
+            "channel": "WhatsApp + Email reinforcement",
+            "recommended_actions": ["Immediate outreach via WhatsApp within 24h", "Executive briefing or personalized event invitation", "Personalized demo scheduled within 48h", "Consider multithreading with Economic Buyer"]
+        },
+        "tier_b": {
+            "range": "50-79",
+            "label": "Tier B — Medium Priority",
+            "channel": "Email",
+            "recommended_actions": ["Structured email nurturing with sector-specific value", "Educational content and Summit session recordings", "Webinar or virtual workshop invitation", "Qualify for Champion potential within 2 touches"]
+        },
+        "tier_c": {
+            "range": "0-49",
+            "label": "Tier C — Low Priority",
+            "channel": "Email",
+            "recommended_actions": ["Automated email campaign with educational content", "Long-term nurturing sequence (30-60-90 day cadence)", "Re-qualify and upgrade tier on next engagement signal"]
+        }
+    }
+}

@@ -1,0 +1,11 @@
+agno
+anthropic
+pydantic
+fastapi
+uvicorn
+python-jose[cryptography]
+python-dotenv
+apscheduler
+lancedb
+fastembed
+mailersend
