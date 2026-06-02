@@ -1,7 +1,7 @@
 import time
 import random
 import json
-from database import get_lead, add_interaction
+from database import get_lead
 
 _INTERNAL_DATA = json.load(open("MANUAL_DATA.json"))
 _WEB_SCRAPING = json.load(open("WEB_SCRAPING.json"))
@@ -174,10 +174,7 @@ def send_message(lead_id: int, channel: str, message: str) -> str:
     if lead is None:
         return json.dumps({"error": f"Lead {lead_id} not found"})
 
-    add_interaction(lead_id, f"{channel}_sent", message)
-
     lead_response = random.choice(MOCK_LEAD_RESPONSES)
-    add_interaction(lead_id, f"{channel}_response", lead_response)
 
     result = {
         "status": "sent",
@@ -200,12 +197,6 @@ def schedule_meeting(lead_id: int, datetime: str) -> str:
     lead = get_lead(lead_id)
     if lead is None:
         return json.dumps({"error": f"Lead {lead_id} not found"})
-
-    add_interaction(
-        lead_id,
-        "meeting_scheduled",
-        f"Meeting scheduled for {datetime}",
-    )
 
     result = {
         "status": "scheduled",

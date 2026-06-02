@@ -1,9 +1,12 @@
 import json
+import os
 
-from agno.agent import Agent, RunOutput
+from agno.agent import Agent, RunOutput, StepInput, StepOutput
 
 from agents.claude import get_claude_haiku_model, get_claude_sonnet_model
 from agents.event_context import get_event_context
+from database import get_lead
+from external.whatsapp import send_whatsapp
 from services import funil_approch_service
 
 
@@ -84,14 +87,43 @@ writer_agent = Agent(
 )
 
 
-def run_agent(input_data: dict, channel: str, lead_id: str, _event: str) -> dict:
-    result: RunOutput = writer_agent.run(input_data)
-    content = json.loads(result.content)
-    funil_approch_service.create_funil_approch(
-        message=content, 
-        channel=channel, 
-        user_id=lead_id, 
-        approuch=_event
-    )
+def _dispatch(lead_id: str, channel: str, message: str) -> dict | None:
+    lead = get_lead(lead_id)
+    if lead is None:
+        return None
 
-    return result
+    if channel == "whatsapp":
+        number = (lead.get("additional_data") or {}).get("phone") or os.getenv("WHATSAPP_DEFAULT_NUMBER", "+5511000000000")
+        delivery = send_whatsapp(number, lead["name"], message)
+    else:
+        delivery = _dispatch_email(lead, message)
+
+    return delivery
+
+
+def _dispatch_email(lead: dict, message: str) -> dict:
+    subject = os.getenv("EVENT_EMAIL_SUBJECT", "Vigil Summit")
+    if os.getenv("MAILERSEND_API_KEY"):
+        from external.mailersender import send_email
+        return send_email(lead["email"], lead["name"], subject, message)
+
+    preview = message.replace("\n", " ")[:80]
+    print(f"[Email:mock] -> {lead['name']} ({lead['email']}): {preview}")
+    return {"status": "sent", "channel": "email", "provider": "mock", "to": lead["email"]}
+
+
+def run_agent(dispatch: bool, input_data: dict, channel: str, lead_id: str, _event: str) -> RunOutput:
+    result: RunOutput = writer_agent.run(input_data)
+    message = result.content if isinstance(result.content, str) else json.dumps(result.content, ensure_ascii=False)
+
+    funil_approch_service.create_funil_approch(
+        user_id=lead_id,
+        approuch=_event,
+        mensagem=message,
+        channel=channel,
+    )
+    
+    if dispatch:
+        _dispatch(lead_id, channel, message)
+
+    return result.content

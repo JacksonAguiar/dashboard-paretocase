@@ -1,7 +1,7 @@
 import json
 
 from agno import guardrails
-from agno.agent import Agent, RunOutput
+from agno.agent import Agent, RunOutput, StepInput, StepOutput
 
 from agents.claude import get_claude_haiku_model, get_claude_sonnet_model
 from agents.event_context import get_event_context
@@ -56,11 +56,11 @@ OUTPUT_RULES = (
     "  },\n"
     "  \"check-in\": {\n"
     "     \"when\": [\"09h\", \"14h\", \"20h\"],\n"
-    "    \"content\": \"o que deve constar no conteúdo do e-mail para atrair e confirmar a presença no evento\"\n"
+    "    \"content_writer\": \"o que deve constar no conteúdo do e-mail para atrair e confirmar a presença no evento\"\n"
     "  },\n"
     "  \"late-checkin\": {\n"
     "    \"when\": [\"09h\", \"14h\", \"20h\"],\n"
-    "    \"content\": \"o que deve constar no conteúdo do e-mail para recuperar e confirmar a presença no evento\"\n"
+    "    \"content_writer\": \"o que deve constar no conteúdo do e-mail para recuperar e confirmar a presença no evento\"\n"
     "  }\n"
     "}\n"
     "Use search_professional_data para enriquecer o plano quando necessário. Timestamps em ISO 8601, fuso UTC-3 (BRT).\n"
@@ -104,5 +104,4 @@ def run_agent(input_data: dict, lead_id: str) -> RunOutput:
     lead_service.set_planner_result(lead_id, content)
     lead_service.set_channel(lead_id, content.get("analyse", {}).get("contact_channel"))
 
-    return result
- 
+    return result.content

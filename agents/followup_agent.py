@@ -1,8 +1,7 @@
 import json
 from datetime import datetime
 
-from agno.agent import Agent, RunOutput
-from agno.run.agent import RUN_EVENT_TYPE_REGISTRY
+from agno.agent import Agent, RunOutput, StepInput, StepOutput
 
 from agents.claude import get_claude_haiku_model, get_claude_sonnet_model
 from agents.event_context import get_event_context
@@ -112,6 +111,7 @@ def _dispatch_followup_routine(args_json: str):
 
 
 def run_followup_agent(
+    dispatch: bool,
     input_data: dict, lead_id: str, channel: str = "email"
 ) -> RunOutput:
     from internal.routine import schedule_once
@@ -121,19 +121,20 @@ def run_followup_agent(
     lead_service.set_followup_instructions(lead_id, str(content))
     lead_service.set_status(lead_id, "follow-up")
 
-    for routine in content.get("routines", []):
-        run_at = datetime.fromisoformat(routine["when"])
-        job_id = f"followup_{lead_id}_{routine['name']}"
-        schedule_once(
-            _dispatch_followup_routine,
-            run_at,
-            job_id,
-            args={
-                "content_writer": routine.get("content_writer"),
-                "lead_id": lead_id,
-                "channel": channel,
-                "name": routine.get("name"),
-            },
-        )
+    if dispatch:
+        for routine in content.get("routines", []):
+            run_at = datetime.fromisoformat(routine["when"])
+            job_id = f"followup_{lead_id}_{routine['name']}"
+            schedule_once(
+                _dispatch_followup_routine,
+                run_at,
+                job_id,
+                args={
+                    "content_writer": routine.get("content_writer"),
+                    "lead_id": lead_id,
+                    "channel": channel,
+                    "name": routine.get("name"),
+                },
+            )
 
     return result

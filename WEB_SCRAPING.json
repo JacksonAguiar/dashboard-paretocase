@@ -14,12 +14,6 @@
         },
         "news": [
             {
-                "title": "TechCorp Announces LATAM Expansion with New São Paulo Engineering Hub",
-                "source": "TechCrunch LATAM",
-                "date": "2025-02-14",
-                "snippet": "The cybersecurity company plans to triple its engineering headcount in Brazil by end of 2025, citing growing enterprise demand for threat detection solutions."
-            },
-            {
                 "title": "TechCorp Raises $42M Series C to Accelerate AI-Powered Threat Detection",
                 "source": "Reuters",
                 "date": "2024-11-03",
@@ -33,13 +27,6 @@
                 "content": "Alert fatigue is the silent killer of SOC teams. We cut our false positive rate by 68% last quarter by moving to a risk-scored alert model. Happy to share the framework.",
                 "likes": 312,
                 "comments": 47
-            },
-            {
-                "platform": "linkedin",
-                "date": "2025-04-08",
-                "content": "MTTD went from 4.2 hours to 38 minutes after we integrated behavioral analytics into our pipeline. The ROI math on that is impossible to argue with at the board level.",
-                "likes": 204,
-                "comments": 29
             }
         ]
     },

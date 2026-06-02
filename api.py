@@ -5,6 +5,7 @@ from contextlib import asynccontextmanager
 from datetime import datetime, timedelta, timezone
 
 from dotenv import load_dotenv
+from agents.single_workflow import run_direct_workflow
 from fastapi import BackgroundTasks, Depends, FastAPI, HTTPException, Query, status
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from jose import JWTError, jwt
@@ -112,6 +113,32 @@ def lead_event(body: EventRequest):
     append_additional_event(lead["id"], body.additional_info.event_type, body.additional_info.content)
     return {"lead_id": lead["id"], "event_type": body.additional_info.event_type}
 
+@app.post("/subscribe/single-workflow", status_code=status.HTTP_201_CREATED)
+def subscribe_single_workflow(body: SubscribeRequest, background_tasks: BackgroundTasks):
+    import json
+    import sqlite3
+    from database import save_lead
+    from tools import search_professional_data
+    
+    user_code = "".join(random.choices(string.ascii_letters + string.digits, k=10))
+
+    enriched_data = json.loads(search_professional_data(body.email, body.company))
+
+    try:
+        lead_id = save_lead(
+            name=body.name,
+            email=body.email,
+            company=body.company,
+            title=body.title,
+            additional_data={"scraping": enriched_data},
+            user_code=user_code,
+        )
+    except sqlite3.IntegrityError:
+        raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="Lead already exists")
+
+    background_tasks.add_task(run_direct_workflow, lead_id)
+    
+    return {"lead_id": lead_id, "user_code": user_code}
 
 @app.post("/subscribe", status_code=status.HTTP_201_CREATED)
 def subscribe(body: SubscribeRequest, background_tasks: BackgroundTasks):

@@ -10,7 +10,6 @@ from database import (
     update_additional_data,
     update_planner_result,
     update_followup_instructions,
-    add_interaction,
     list_leads_by_status,
 )
 
@@ -58,10 +57,6 @@ def set_planner_result(lead_id: int, result: str) -> None:
 
 def set_followup_instructions(lead_id: int, instructions: str) -> None:
     update_followup_instructions(lead_id, instructions)
-
-
-def record_interaction(lead_id: int, type_: str, content: str) -> None:
-    add_interaction(lead_id, type_, content)
 
 
 def list_by_status(status: str) -> list[dict]:

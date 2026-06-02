@@ -26,7 +26,6 @@ def init_db():
             funnel_status TEXT DEFAULT 'captured',
             enriched_data TEXT DEFAULT '{}',
             additional_data TEXT DEFAULT '{}',
-            interaction_history TEXT DEFAULT '[]',
             channel TEXT,
             planner_result TEXT,
             followup_instructions TEXT,
@@ -142,7 +141,6 @@ def get_lead(lead_id: int) -> dict | None:
     lead = dict(row)
     lead["enriched_data"] = json.loads(lead["enriched_data"])
     lead["additional_data"] = json.loads(lead["additional_data"])
-    lead["interaction_history"] = json.loads(lead["interaction_history"])
     lead["planner_result"] = json.loads(lead["planner_result"]) if lead.get("planner_result") else None
     return lead
 
@@ -156,7 +154,6 @@ def get_lead_by_email(email: str) -> dict | None:
     lead = dict(row)
     lead["enriched_data"] = json.loads(lead["enriched_data"])
     lead["additional_data"] = json.loads(lead["additional_data"])
-    lead["interaction_history"] = json.loads(lead["interaction_history"])
     lead["planner_result"] = json.loads(lead["planner_result"]) if lead.get("planner_result") else None
     return lead
 
@@ -170,7 +167,6 @@ def get_lead_by_user_code(user_code: str) -> dict | None:
     lead = dict(row)
     lead["enriched_data"] = json.loads(lead["enriched_data"])
     lead["additional_data"] = json.loads(lead["additional_data"])
-    lead["interaction_history"] = json.loads(lead["interaction_history"])
     lead["planner_result"] = json.loads(lead["planner_result"]) if lead.get("planner_result") else None
     return lead
 
@@ -314,26 +310,6 @@ def list_leads_by_status(status: str) -> list[dict]:
         lead = dict(row)
         lead["enriched_data"] = json.loads(lead["enriched_data"])
         lead["additional_data"] = json.loads(lead["additional_data"])
-        lead["interaction_history"] = json.loads(lead["interaction_history"])
         lead["planner_result"] = json.loads(lead["planner_result"]) if lead.get("planner_result") else None
         leads.append(lead)
     return leads
-
-
-def add_interaction(lead_id: int, type_: str, content: str):
-    lead = get_lead(lead_id)
-    if lead is None:
-        return
-    history = lead["interaction_history"]
-    history.append({
-        "type": type_,
-        "content": content,
-        "timestamp": datetime.now().isoformat(),
-    })
-    conn = get_connection()
-    conn.execute(
-        "UPDATE leads SET interaction_history = ? WHERE id = ?",
-        (json.dumps(history, ensure_ascii=False), lead_id),
-    )
-    conn.commit()
-    conn.close()
