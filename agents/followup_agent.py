@@ -98,25 +98,33 @@ followup_agent = Agent(
 
 def _dispatch_followup_routine(args_json: str):
     from agents import writer_agent
+    from agents.anonymizer import get_mapping
 
     args = json.loads(args_json)
-    lead_service.set_status(args.get("lead_id"), args.get("name", "follow-up"))
+    lead_id = args.get("lead_id")
+    lead_service.set_status(lead_id, args.get("name", "follow-up"))
+
+    lead_data = lead_service.get_lead_by_id(lead_id)
+    pii_mapping = get_mapping(lead_data) if lead_data else {}
 
     writer_agent.run_agent(
+        session_id=f"session-{lead_id}",
+        dispatch=True,
         input_data=args.get("content_writer"),
         channel=args.get("channel", "email"),
-        lead_id=args.get("lead_id"),
+        lead_id=lead_id,
         _event=args.get("name"),
+        pii_mapping=pii_mapping,
     )
 
 
-def run_followup_agent(
+def run_followup_agent(session_id: str, 
     dispatch: bool,
     input_data: dict, lead_id: str, channel: str = "email"
 ) -> RunOutput:
     from internal.routine import schedule_once
 
-    result: RunOutput = followup_agent.run(input_data)
+    result: RunOutput = followup_agent.run(input_data, session_id=session_id)
     content = json.loads(result.content)
     lead_service.set_followup_instructions(lead_id, str(content))
     lead_service.set_status(lead_id, "follow-up")

@@ -3,6 +3,7 @@ import os
 
 from agno.agent import Agent, RunOutput, StepInput, StepOutput
 
+from agents.anonymizer import deanonymize
 from agents.claude import get_claude_haiku_model, get_claude_sonnet_model
 from agents.event_context import get_event_context
 from database import get_lead
@@ -112,9 +113,12 @@ def _dispatch_email(lead: dict, message: str) -> dict:
     return {"status": "sent", "channel": "email", "provider": "mock", "to": lead["email"]}
 
 
-def run_agent(dispatch: bool, input_data: dict, channel: str, lead_id: str, _event: str) -> RunOutput:
-    result: RunOutput = writer_agent.run(input_data)
+def run_agent(session_id: str, dispatch: bool, input_data: dict, channel: str, lead_id: str, _event: str, pii_mapping: dict | None = None) -> RunOutput:
+    result: RunOutput = writer_agent.run(input_data, session_id=session_id)
     message = result.content if isinstance(result.content, str) else json.dumps(result.content, ensure_ascii=False)
+
+    if pii_mapping:
+        message = deanonymize(message, pii_mapping)
 
     funil_approch_service.create_funil_approch(
         user_id=lead_id,

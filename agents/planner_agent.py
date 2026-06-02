@@ -98,8 +98,8 @@ planner_agent = Agent(
 )
 
 
-def run_agent(input_data: dict, lead_id: str) -> RunOutput:
-    result: RunOutput = planner_agent.run(input_data)
+def run_agent(session_id: str, input_data: dict, lead_id: str) -> RunOutput:
+    result: RunOutput = planner_agent.run(input_data, session_id=session_id)
     content = json.loads(result.content)
     lead_service.set_planner_result(lead_id, content)
     lead_service.set_channel(lead_id, content.get("analyse", {}).get("contact_channel"))
