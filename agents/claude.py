@@ -2,7 +2,13 @@ from agno.models.anthropic import Claude
 import os
 
 def get_claude_haiku_model():
-    return Claude(id=os.getenv("CLAUDE_FALLBACK_MODEL"), api_key=os.getenv("ANTHROPIC_API_KEY"))
+    name = os.getenv("FALLBACK_AGENT_NAME")
+    if not name:
+        raise ValueError("FALLBACK_AGENT_NAME not set in environment")
+    return Claude(id=name, api_key=os.getenv("ANTHROPIC_API_KEY"))
 
 def get_claude_sonnet_model():
-    return Claude(id=os.getenv("CLAUDE_MAIN_MODEL"), api_key=os.getenv("ANTHROPIC_API_KEY"))
+    name = os.getenv("MAIN_AGENT_NAME")
+    if not name:
+        raise ValueError("MAIN_AGENT_NAME not set in environment")
+    return Claude(id=name, api_key=os.getenv("ANTHROPIC_API_KEY"))

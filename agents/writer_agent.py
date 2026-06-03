@@ -1,7 +1,7 @@
 import json
 import os
 
-from agno.agent import Agent, RunOutput, StepInput, StepOutput
+from agno.agent import Agent, RunOutput
 
 from agents.anonymizer import deanonymize
 from agents.claude import get_claude_haiku_model, get_claude_sonnet_model

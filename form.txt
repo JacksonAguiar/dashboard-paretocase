@@ -1,5 +1,31 @@
 # Formulário
 
+# 1. Arquitetura da Solução
+
+## Desenho da arquitetura
+
+O sistema é como uma esteira automatizada de vendas. Uma pessoa se inscreve num evento, e a partir daí um conjunto de agentes de IA cuida de tudo: entende quem é essa pessoa, decide como abordá-la, escreve as mensagens e as envia no momento certo — sem intervenção humana.
+
+## Camadas da aplicação
+
+- **Entrada de dados** — é a porta de entrada. Recebe as informações do lead (nome, email, empresa, cargo) via uma API web.
+- **Processamento** — analisa o lead: detecta qual é o cargo real, qual é o setor da empresa, qual o nível de interesse potencial e qual canal usar (email ou WhatsApp).
+- **LLM (Inteligência Artificial)** — três agentes de IA com papéis distintos. Um pensa na estratégia de abordagem, outro escreve as mensagens, e um terceiro planeja o follow-up depois do evento.
+- **Banco de dados** — guarda tudo: os dados do lead, as mensagens geradas, o histórico de uso dos agentes e o estágio atual do lead no funil.
+- **Canais de comunicação** — onde a mensagem chega de fato: email ou WhatsApp, dependendo do perfil do lead.
+- **Agendador** — um relógio interno que dispara as ações automaticamente nos momentos certos, sem ninguém precisar apertar um botão.
+
+## Fluxo de dados
+
+O lead entra pelo formulário. O sistema imediatamente enriquece os dados dele buscando informações sobre seu perfil profissional. Depois salva tudo no banco. Em seguida, em segundo plano, o agente estrategista analisa o lead e monta um plano de abordagem. O agente escritor pega esse plano e escreve as mensagens. O agente de follow-up planeja os contatos que virão depois do evento. As mensagens ficam salvas e o agendador garante que cada uma seja enviada na hora certa.
+
+## Onde cada fase do funil se encaixa
+
+- **Captação** — acontece no momento em que o lead preenche o formulário e o sistema salva seus dados.
+- **Enriquecimento** — acontece logo depois, ainda na hora da inscrição. O sistema descobre o cargo real, o setor, o tamanho da empresa e o potencial de compra do lead.
+- **Engajamento** — começa com o agente estrategista definindo como abordar aquele lead, e o agente escritor gerando as mensagens de confirmação de presença e antecipação de valor. O agendador dispara esses contatos nos dias que antecedem o evento.
+- **Follow-up** — entra após o evento. O sistema lê o que o lead fez durante o evento (sessões que assistiu, interesse demonstrado) e o agente de follow-up planeja uma sequência de contatos para converter esse interesse em uma reunião comercial.
+
 ## 2. Stack Tecnológico Justificado
 
 ### Liste e justifique cada tecnologia escolhida:

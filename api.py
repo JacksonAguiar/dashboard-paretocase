@@ -5,13 +5,14 @@ from contextlib import asynccontextmanager
 from datetime import datetime, timedelta, timezone
 
 from dotenv import load_dotenv
+
+load_dotenv()
+
 from agents.single_workflow import run_direct_workflow
 from fastapi import BackgroundTasks, Depends, FastAPI, HTTPException, Query, status
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from jose import JWTError, jwt
 from pydantic import BaseModel
-
-load_dotenv()
 
 
 @asynccontextmanager
@@ -130,11 +131,14 @@ def subscribe_single_workflow(body: SubscribeRequest, background_tasks: Backgrou
             email=body.email,
             company=body.company,
             title=body.title,
-            additional_data={"scraping": enriched_data},
+            additional_data=body.additional_data or {},
             user_code=user_code,
         )
     except sqlite3.IntegrityError:
         raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="Lead already exists")
+
+    from database import update_enriched_data
+    update_enriched_data(lead_id, enriched_data)
 
     background_tasks.add_task(run_direct_workflow, lead_id)
     
@@ -157,13 +161,14 @@ def subscribe(body: SubscribeRequest, background_tasks: BackgroundTasks):
             email=body.email,
             company=body.company,
             title=body.title,
-            additional_data={"scraping": enriched_data},
+            additional_data=body.additional_data or {},
             user_code=user_code,
         )
     except sqlite3.IntegrityError:
         raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="Email already registered")
 
-    # update_enriched_data(lead_id, enriched_data)
+    from database import update_enriched_data
+    update_enriched_data(lead_id, enriched_data)
 
     background_tasks.add_task(_run_planner, lead_id)
 

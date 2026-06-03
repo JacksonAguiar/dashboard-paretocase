@@ -1,12 +1,11 @@
 import json
 
 from agno import guardrails
-from agno.agent import Agent, RunOutput, StepInput, StepOutput
+from agno.agent import Agent, RunOutput
 
 from agents.claude import get_claude_haiku_model, get_claude_sonnet_model
 from agents.event_context import get_event_context
 from services import lead_service
-from tools import search_professional_data
 
 PERSONA = (
     "Você é a estrategista de pré-vendas (Sales Strategist) da Vigil.AI, especialista em "
@@ -93,7 +92,6 @@ planner_agent = Agent(
     fallback_models=FALLBACK_MODELS,
     tools=[],
     instructions=SYSTEM_PROMPT,
-    guardrails=guardrails,
     markdown=True,
 )
 

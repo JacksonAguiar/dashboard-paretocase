@@ -4,8 +4,6 @@ Sistema multi-agente para captação, engajamento e follow-up automatizado de le
 
 ![Arquitetura](multi_agent_event_architecture.svg)
 
----
-
 ## Visão Geral
 
 O sistema orquestra três agentes de IA para gerenciar o ciclo de vida completo de um lead: desde a inscrição no evento até o follow-up pós-evento, com comunicação personalizada por cargo, setor e canal.
@@ -17,6 +15,17 @@ O sistema orquestra três agentes de IA para gerenciar o ciclo de vida completo 
 | **Captação** | Lead se inscreve via webhook → dados salvos → enriquecimento com web scraping simulado |
 | **Engajamento** | Planner cria estratégia ICP → Writer gera mensagens personalizadas → rotinas agendadas disparam pré-evento |
 | **Follow-up** | Após o evento, Followup Agent cria sequência customizada baseada no contexto de participação |
+
+---
+
+## Princípios de Design e Negócio
+
+O objetivo central do sistema é converter inscritos em participantes confirmados e, após o evento, em reuniões comerciais — controlando no-show e maximizando engajamento em cada etapa do funil.
+
+- **Agentes verticalizados** — cada agente tem uma responsabilidade única e bem definida (estratégia, escrita, follow-up), garantindo maior precisão e qualidade em cada etapa do funil.
+- **Balanceamento de dados externos** — enriquecimento combina perfis internos por cargo com dados dinâmicos de scraping, produzindo personalização real e não comunicação genérica.
+- **Rotinas diversificadas por ICP** — leads são segmentados por tier (A/B/C), canal e timing antes de qualquer disparo, aumentando a chance de resposta e reduzindo no-show.
+- **Análise ponta a ponta** — o sistema cobre pré-evento, durante e pós-evento, permitindo entender o nível de interesse do participante em cada fase e direcionar a abordagem para uma reunião comercial.
 
 ---
 

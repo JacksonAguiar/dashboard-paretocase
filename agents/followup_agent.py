@@ -1,7 +1,8 @@
 import json
 from datetime import datetime
 
-from agno.agent import Agent, RunOutput, StepInput, StepOutput
+from agno import guardrails
+from agno.agent import Agent, RunOutput
 
 from agents.claude import get_claude_haiku_model, get_claude_sonnet_model
 from agents.event_context import get_event_context
