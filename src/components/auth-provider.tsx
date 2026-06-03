@@ -35,7 +35,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, [isAuthenticated, pathname, isReady, router]);
 
   const login = (email: string, password: string) => {
-    if (email === "admin@vigilsummit.com" && password === "admin") {
+    if (email === "gabriel@pareto.io" && password === "123456") {
       sessionStorage.setItem("vigil_auth", "true");
       setIsAuthenticated(true);
       return true;
